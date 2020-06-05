@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Typography, Row, Button } from 'antd';
+import { Typography, Row} from 'antd';
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../../Config'
 import MainImage from './Sections/MainImage'
 import SearchArea from './Sections/SearchArea'
 import GridCard from '../../commons/GridCards'
-import renderEmpty from 'antd/lib/config-provider/renderEmpty';
 
 const { Title } = Typography;
 function LandingPage() {
@@ -18,7 +17,7 @@ function LandingPage() {
 
 
     useEffect(() => {
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        let endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
         fetchMovies(endpoint)
     }, [])
 
